@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntelliForecast AI - Refreshed Themes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png" type="image/png">
+<style>
+  :root {
+    /* New Light Theme Palette */
+    --color-background-body: #FFFFFF;
+    --color-background-primary: #FFFFFF;
+    --color-background-secondary: #F0F2F5; /* Light cool gray for secondary elements */
+    --color-background-card: rgba(248, 249, 250, 0.85); /* Slightly more opaque, very light gray */
+    --color-background-card-opaque: #F8F9FA;
+    --color-background-header: rgba(255, 255, 255, 0.95); /* More opaque white for header */
+    --color-background-input: #FFFFFF;
+    
+    --color-text-primary: #212529; /* Very dark gray (Bootstrap's default body color) */
+    --color-text-secondary: #6C757D; /* Medium gray (Bootstrap's secondary text) */
+    --color-text-accent: #0D6EFD; /* Standard Bootstrap Blue */
+    --color-text-on-accent: #FFFFFF;
+    --color-text-logo-gradient-from: #0D6EFD; /* Bootstrap Blue */
+    --color-text-logo-gradient-via: #0DCAF0; /* Bootstrap Cyan */
+    --color-text-logo-gradient-to: #6F42C1; /* Bootstrap Purple */
+
+    --color-border-primary: #DEE2E6; /* Light gray border */
+    --color-border-secondary: #E9ECEF; /* Very light gray for card borders */
+    --color-border-focus: #0D6EFD; /* Bootstrap Blue for focus */
+    
+    --color-button-primary-bg: #0D6EFD;
+    --color-button-primary-hover-bg: #0B5ED7; /* Darker Bootstrap Blue */
+    --color-button-primary-text: #FFFFFF;
+    --color-button-secondary-bg: #E9ECEF; /* Light gray button */
+    --color-button-secondary-hover-bg: #DDE1E4; /* Slightly darker gray */
+    --color-button-secondary-text: #212529; /* Dark text for light button */
+    --color-button-outline-text: #0D6EFD;
+    --color-button-outline-border: #0D6EFD;
+    --color-button-outline-hover-bg: rgba(13, 110, 253, 0.1); /* Light blue hover for outline */
+
+    --color-shadow-card: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.07); /* Softer shadow */
+    --color-shadow-header: 0 1px 3px 0 rgba(0,0,0,0.07), 0 1px 2px -1px rgba(0,0,0,0.07);
+    
+    /* Chart Colors - Light */
+    --color-chart-line-primary: #0D6EFD;
+    --color-chart-line-secondary1: #17A2B8; /* Teal */
+    --color-chart-line-secondary2: #FFC107; /* Amber */
+    --color-chart-grid: #CED4DA; /* Lighter grid lines */
+    --color-chart-text: #495057; /* Darker gray for chart text */
+    --color-chart-tooltip-bg: rgba(255, 255, 255, 0.95);
+    --color-chart-tooltip-border: #DEE2E6;
+    --color-chart-tooltip-text-label: #212529;
+    --color-chart-tooltip-text-item: #0D6EFD;
+    --color-chart-bar-fill: #0D6EFD;
+  }
+
+  html.dark {
+    /* New Dark Theme Palette */
+    --color-background-body: #121212; /* Rich dark background */
+    --color-background-primary: #121212;
+    --color-background-secondary: #1E1E1E; /* Slightly lighter dark for secondary elements */
+    --color-background-card: rgba(40, 40, 40, 0.85); /* Dark gray card, slightly more opaque */
+    --color-background-card-opaque: #282828;
+    --color-background-header: rgba(30, 30, 30, 0.95); /* More opaque dark header */
+    --color-background-input: #282828; /* Dark input background */
+
+    --color-text-primary: #E0E0E0; /* Light gray for primary text */
+    --color-text-secondary: #A0A0A0; /* Medium-light gray for secondary text */
+    --color-text-accent: #4DABF7; /* Bright Sky Blue */
+    --color-text-on-accent: #0A0A0A; /* Very dark for contrast on bright accent */
+    --color-text-logo-gradient-from: #4DABF7; /* Bright Sky Blue */
+    --color-text-logo-gradient-via: #74C0FC; /* Lighter Sky Blue */
+    --color-text-logo-gradient-to: #A5D8FF; /* Even Lighter Sky Blue */
+
+    --color-border-primary: #424242; /* Darker gray border */
+    --color-border-secondary: #303030; /* Very dark gray for card borders */
+    --color-border-focus: #4DABF7; /* Bright Sky Blue for focus */
+
+    --color-button-primary-bg: #4DABF7;
+    --color-button-primary-hover-bg: #228BE6; /* Darker Sky Blue */
+    --color-button-primary-text: #0A0A0A; /* Very dark text on bright button */
+    --color-button-secondary-bg: #303030; /* Dark gray button */
+    --color-button-secondary-hover-bg: #424242; /* Slightly lighter dark gray */
+    --color-button-secondary-text: #E0E0E0; /* Light text for dark button */
+    --color-button-outline-text: #4DABF7;
+    --color-button-outline-border: #4DABF7;
+    --color-button-outline-hover-bg: rgba(77, 171, 247, 0.15); /* Light blue hover for outline */
+    
+    --color-shadow-card: 0 4px 8px -2px rgba(0,0,0,0.3), 0 2px 6px -2px rgba(0,0,0,0.3); /* Slightly more pronounced shadow for dark */
+    --color-shadow-header: 0 1px 4px 0 rgba(0,0,0,0.3), 0 1px 3px -1px rgba(0,0,0,0.3);
+
+    /* Chart Colors - Dark */
+    --color-chart-line-primary: #4DABF7; /* Bright Sky Blue */
+    --color-chart-line-secondary1: #8CE99A; /* Light Green */
+    --color-chart-line-secondary2: #FFD43B; /* Bright Yellow */
+    --color-chart-grid: #555555; /* Medium dark gray grid */
+    --color-chart-text: #B0B0B0; /* Lighter gray for chart text */
+    --color-chart-tooltip-bg: rgba(30, 30, 30, 0.95);
+    --color-chart-tooltip-border: #424242;
+    --color-chart-tooltip-text-label: #E0E0E0;
+    --color-chart-tooltip-text-item: #4DABF7;
+    --color-chart-bar-fill: #4DABF7;
+  }
+
+  body {
+    background-color: var(--color-background-body);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.514.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0",
+    "recharts": "https://esm.sh/recharts@^2.15.3",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
